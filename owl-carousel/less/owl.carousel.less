@@ -4,6 +4,8 @@
  *	based on v1.3.2 of CSS file
  */
 
+@import '../../bower_components/lesshat/build/lesshat.less';
+
 .owl-carousel {
 	/* display none until init */
 	display: none;
@@ -13,7 +15,7 @@
 	.owl-wrapper{
 		display: none;
 		position: relative;
-		-webkit-transform: translate3d(0px, 0px, 0px);
+		.translate3d(0);
 		/* clearfix */
 		&:after {
 			content: ".";
@@ -30,11 +32,7 @@
 		width: 100%;
 	}
 	&.autoHeight{
-		-webkit-transition: height 500ms ease-in-out;
-		-moz-transition: height 500ms ease-in-out;
-		-ms-transition: height 500ms ease-in-out;
-		-o-transition: height 500ms ease-in-out;
-		transition: height 500ms ease-in-out;
+		.transition(height 500ms ease-in-out);
 	}
 	.owl-item{
 		float: left;
@@ -42,21 +40,13 @@
 	/* fix */
 	.owl-wrapper,
 	.owl-item{
-		-webkit-backface-visibility: hidden;
-		-moz-backface-visibility:    hidden;
-		-ms-backface-visibility:     hidden;
-	  -webkit-transform: translate3d(0,0,0);
-	  -moz-transform: translate3d(0,0,0);
-	  -ms-transform: translate3d(0,0,0);
+		.backface-visibility(hidden);
+		.translate3d(0,0,0);
 	}
 }
 	
 .owl-controls {
-	-webkit-user-select: none;
-	-khtml-user-select: none;
-	-moz-user-select: none;
-	-ms-user-select: none;
-	user-select: none;
+	.user-select(none);
 	-webkit-tap-highlight-color: rgba(0, 0, 0, 0);
 	.owl-page,
 	.owl-buttons div{
